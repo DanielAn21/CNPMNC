@@ -1,0 +1,63 @@
+﻿@model Book;
+@{
+    var categories = ViewBag.categories as List<Category>;
+}
+<div class="col-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Add new book</h4>
+      <p class="card-description">please enter all form</p>
+      <form class="forms-sample" method="post" asp-action="create">
+        <div class="form-group">
+          <label asp-for="@Model.title"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.title"
+          />
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.author"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.author"
+          />
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.publicYear"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.publicYear"
+          />
+        </div>
+         <div class="form-group">
+          <label asp-for="@Model.publisher"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.publisher"
+          />
+        </div>
+          <div class="form-group">
+          <label asp-for="@Model.quantity"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.quantity"
+          />
+        </div>
+       
+        <div class="form-group">
+          <label for="exampleSelectGender">Gener</label>
+          <select class="form-control" name="category" id="exampleSelectGender">
+         @if(categories != null){
+             @foreach (var item in categories)
+            {
+                <option value="@item.id">@item.name</option>
+            }
+         }
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <button class="btn btn-light">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

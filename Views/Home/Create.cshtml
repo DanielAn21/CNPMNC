@@ -1,0 +1,62 @@
+﻿@model Book;
+<div class="col-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Add new book</h4>
+      <p class="card-description">please enter all form</p>
+      <form class="forms-sample">
+        <div class="form-group">
+          <label asp-for="@Model.title"></label>
+          <input
+            type="text"
+            class="form-control"
+            asp-for="@Model.title"
+          />
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.author"></label>
+          <input
+            type="text"
+            class="form-control"
+            asp-for="@Model.author"
+          />
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.publicYear"></label>
+          <input
+            type="text"
+            class="form-control"
+            asp-for="@Model.publicYear"
+          />
+        </div>
+         <div class="form-group">
+          <label asp-for="@Model.publisher"></label>
+          <input
+            type="text"
+            class="form-control"
+            asp-for="@Model.publisher"
+          />
+        </div>
+          <div class="form-group">
+          <label asp-for="@Model.quantity"></label>
+          <input
+            type="text"
+            class="form-control"
+            asp-for="@Model.quantity"
+          />
+        </div>
+       
+        <div class="form-group">
+          <label for="exampleSelectGender">Gener</label>
+          <select class="form-control" id="exampleSelectGender">
+            <option>Action</option>
+            <option>Education</option>
+            <option>Drama</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <button class="btn btn-light">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

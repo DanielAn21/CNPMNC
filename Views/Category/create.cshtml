@@ -1,0 +1,23 @@
+﻿@model Category;
+@{
+    var categories = ViewBag.categories as List<Category>;
+}
+<div class="col-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Add new Category</h4>
+      <p class="card-description">please enter all form</p>
+      <form class="forms-sample" method="post" asp-action="create">
+        <div class="form-group">
+          <label asp-for="@Model.name"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.name"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <button class="btn btn-light">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
