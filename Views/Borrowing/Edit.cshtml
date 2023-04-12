@@ -6,6 +6,15 @@
       <h4 class="card-title">Add new book</h4>
       <p class="card-description">please enter all form</p>
       <form class="forms-sample" method="post" asp-action="edit">
+         <div class="form-group">
+          <label> Id</label>
+          <input
+            class="form-control"
+            name="bookId"
+            value="@Model.id"
+            readonly
+          />
+        </div>
         <div class="form-group">
           <label>Book Id</label>
           <input

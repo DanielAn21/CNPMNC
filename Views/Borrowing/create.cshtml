@@ -8,7 +8,7 @@
 <div class="col-12 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Add new book</h4>
+      <h4 class="card-title">Tạo Mượn Sách</h4>
       <p class="card-description">please enter all form</p>
       <form class="forms-sample" method="post" asp-action="create">
          <div class="form-group">
@@ -34,21 +34,21 @@
               </select>
          </div>
         <div class="form-group">
-          <label asp-for="@Model.brrowingDate"></label>
+          <label asp-for="@Model.brrowingDate">Ngày Mươn</label>
           <input
             class="form-control"
             asp-for="@Model.brrowingDate"
           />
         </div>
          <div class="form-group">
-          <label asp-for="@Model.dueTime"></label>
+          <label asp-for="@Model.dueTime">Ngày Trả Dự Kiến</label>
           <input
             class="form-control"
             asp-for="@Model.dueTime"
           />
         </div>
         <div class="form-group">
-          <label asp-for="@Model.returnDate"></label>
+          <label asp-for="@Model.returnDate">Ngày Trả</label>
           <input
             class="form-control"
             asp-for="@Model.returnDate"
@@ -56,7 +56,7 @@
         </div>
        
         <div class="form-group">
-          <label asp-for="@Model.fineAmount"></label>
+          <label asp-for="@Model.fineAmount">Số Tiền Phạt</label>
           <input
             class="form-control"
             asp-for="@Model.fineAmount"

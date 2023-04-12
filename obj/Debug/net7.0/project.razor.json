@@ -18645,8 +18645,8 @@
   "RootNamespace": "LibManager",
   "Documents": [
     {
-      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Book copy/Edit.cshtml",
-      "TargetPath": "Views\\Book copy\\Edit.cshtml",
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Auth/login.cshtml",
+      "TargetPath": "Views\\Auth\\login.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18665,6 +18665,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Borrowing/Index.cshtml",
+      "TargetPath": "Views\\Borrowing\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Notication/create.cshtml",
+      "TargetPath": "Views\\Notication\\create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/toanle/code Thue/LibManager/Views/Shared/_themeSetting.cshtml",
       "TargetPath": "Views\\Shared\\_themeSetting.cshtml",
       "FileKind": "mvc"
@@ -18675,8 +18685,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Borrowing/Edit.cshtml",
+      "TargetPath": "Views\\Borrowing\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/toanle/code Thue/LibManager/Views/User/create.cshtml",
       "TargetPath": "Views\\User\\create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Auth/Edit.cshtml",
+      "TargetPath": "Views\\Auth\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Notication/Index.cshtml",
+      "TargetPath": "Views\\Notication\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18690,8 +18715,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Book copy/Index.cshtml",
-      "TargetPath": "Views\\Book copy\\Index.cshtml",
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Notication/details.cshtml",
+      "TargetPath": "Views\\Notication\\details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18710,13 +18735,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Auth/Forbidden.cshtml",
+      "TargetPath": "Views\\Auth\\Forbidden.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/toanle/code Thue/LibManager/Views/Shared/_sidebar.cshtml",
       "TargetPath": "Views\\Shared\\_sidebar.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Book copy/create.cshtml",
-      "TargetPath": "Views\\Book copy\\create.cshtml",
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Tracking/index.cshtml",
+      "TargetPath": "Views\\Tracking\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Tracking/Tracking.cshtml",
+      "TargetPath": "Views\\Tracking\\Tracking.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18752,6 +18787,11 @@
     {
       "FilePath": "/Users/toanle/code Thue/LibManager/Views/Home/Create.cshtml",
       "TargetPath": "Views\\Home\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Borrowing/create.cshtml",
+      "TargetPath": "Views\\Borrowing\\create.cshtml",
       "FileKind": "mvc"
     },
     {

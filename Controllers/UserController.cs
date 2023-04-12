@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using LibManager.Models;
 using Microsoft.EntityFrameworkCore;
 using LibManager.utils;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibManager.Controllers;
 
+[Authorize(Roles = "admin")]
 public class UserController : Controller
 {
     private readonly ILogger<UserController> _logger;

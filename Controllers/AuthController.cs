@@ -2,6 +2,10 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using LibManager.Models;
 using Microsoft.EntityFrameworkCore;
+using LibManager.utils;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace LibManager.Controllers;
 
@@ -16,109 +20,84 @@ public class AuthController : Controller
         _dbContext = dbContext;
     }
 
-    public async Task<IActionResult> Index()
+    public IActionResult Login(string? returnUrl)
     {
-        var categories = await _dbContext.Categories.ToListAsync();
-        ViewBag.categories = categories;
-
-        var books = await _dbContext.Books.Include(x => x.category).ToListAsync();
-        return View(books);
-
-    }
-
-    public async Task<IActionResult> Create()
-    {
-        var categories = await _dbContext.Categories.ToListAsync();
-        ViewBag.categories = categories;
+        returnUrl = returnUrl ?? "/";
+        ViewBag.returnUrl = returnUrl;
+        if (User?.Identity?.IsAuthenticated == true)
+            return Redirect(returnUrl);
         return View();
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([Bind] Book book, string category)
+    public async Task<IActionResult> Login(string email, string password, string returnUrl)
     {
-        var categories = await _dbContext.Categories.ToListAsync();
-        ViewBag.categories = categories;
-
+        returnUrl = returnUrl ?? "/";
+        ViewBag.returnUrl = returnUrl;
         try
         {
-            var categoryDb = await _dbContext.Categories.FirstOrDefaultAsync(x => x.id == category);
-            if (categoryDb == null) throw new Exception("not found category");
+            User user = validateUser(email, password);
+            var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.email),
+                    new Claim(ClaimTypes.NameIdentifier, user.id.ToString()),
+                    new Claim(ClaimTypes.Role, user.role.ToString()),
+                };
 
-            book.category = categoryDb;
-            await _dbContext.Books.AddAsync(book);
+            _logger.LogInformation(user.role.ToString());
 
-            await _dbContext.SaveChangesAsync();
+            var claimsIdentity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-            return RedirectToAction("Index");
-        }
-        catch (System.Exception ex)
-        {
-            return Ok(ex.Message);
-        }
-    }
-    [HttpGet]
-    public async Task<IActionResult> Edit(string id)
-    {
-        var categories = await _dbContext.Categories.ToListAsync();
-        ViewBag.categories = categories;
-        try
-        {
-            var book = await _dbContext.Books.FirstOrDefaultAsync(x => x.id == id);
-            return View(book);
-        }
-        catch (System.Exception ex)
-        {
-            return Ok(ex.Message);
-        }
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> Edit([Bind] Book book, string category)
-    {
-        var categories = await _dbContext.Categories.ToListAsync();
-        ViewBag.categories = categories;
-        try
-        {
-
-            var bookDb = await _dbContext.Books.FirstOrDefaultAsync(x => x.id == book.id);
-            if (bookDb != null)
+            var authProperties = new AuthenticationProperties
             {
-                var categoryDb = await _dbContext.Categories.FirstOrDefaultAsync(x => x.id == category);
-                if (categoryDb != null) bookDb.category = categoryDb;
-                _dbContext.Entry(bookDb).CurrentValues.SetValues(book);
-                await _dbContext.SaveChangesAsync();
-            }
-            return View(book);
+            };
+
+            await HttpContext.SignInAsync(
+                scheme: "libmanager",
+                new ClaimsPrincipal(claimsIdentity),
+                authProperties);
+            return Redirect(returnUrl);
         }
-        catch (System.Exception ex)
+        catch (Exception ex)
         {
-            return Ok(ex.Message);
+            ViewBag.errorMessage = ex.Message;
+            return View();
         }
     }
 
+    public async Task<IActionResult> Logout(string? returnUrl)
+    {
+        returnUrl = returnUrl ?? "/auth/login";
 
-    [HttpPost]
-    public async Task<IActionResult> delete(string id)
+        await HttpContext.SignOutAsync(
+        scheme: "libmanager");
+
+        return Redirect(returnUrl);
+    }
+
+    public async Task<IActionResult> Forbidden()
+    {
+        await Task.CompletedTask;
+        return View();
+    }
+
+    private User validateUser(string email, string password)
     {
         try
         {
-            var book = await _dbContext.Books.FirstOrDefaultAsync(x => x.id == id);
-            if (book != null)
-            {
-                _dbContext.Books.Remove(book);
-                await _dbContext.SaveChangesAsync();
-            }
-            return RedirectToAction("Index");
+            var user = _dbContext.Users.FirstOrDefault(x => x.email == email);
+            if (user == null)
+                throw new Exception("email is incorrect ");
+            if (!MD5Password.ComparePassword(password, user.hashPassword))
+                throw new Exception("password is incorrect");
+            return user;
         }
         catch (System.Exception ex)
         {
-            return Ok(ex.Message);
+
+            throw new Exception(ex.Message);
         }
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
 }

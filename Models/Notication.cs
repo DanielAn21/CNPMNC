@@ -16,7 +16,5 @@ namespace LibManager.Models
 
         public TypeMessage typeMessage { set; get; } = default!;
 
-
-
     }
 }

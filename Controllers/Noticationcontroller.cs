@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using LibManager.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibManager.Controllers;
 
+[Authorize]
 public class NoticationController : Controller
 {
     private readonly ILogger<NoticationController> _logger;
@@ -18,31 +21,38 @@ public class NoticationController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var notications = await _dbContext.Notications.ToListAsync();
+        var email = User.FindFirst(ClaimTypes.Name)?.Value;
+        var notications = await _dbContext.Notications.Include(x => x.receiver).Include(x => x.sender).Where(x => x.sender.email.Equals(email) || x.receiver.email.Equals(email)).ToListAsync();
         return View(notications);
     }
 
     public async Task<IActionResult> Create()
     {
-        var categories = await _dbContext.Categories.ToListAsync();
-        ViewBag.categories = categories;
+
         return View();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Create([Bind] Book book, string category)
+    public async Task<IActionResult> Details(string id)
     {
-        var categories = await _dbContext.Categories.ToListAsync();
-        ViewBag.categories = categories;
+        var notication = await _dbContext.Notications.Include(x => x.sender).Include(x => x.receiver).FirstOrDefaultAsync(x => x.id == id);
+        return View(notication);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create([Bind] Notication notication, string receiver)
+    {
+
 
         try
         {
-            var categoryDb = await _dbContext.Categories.FirstOrDefaultAsync(x => x.id == category);
-            if (categoryDb == null) throw new Exception("not found category");
+            var emailUser = User.FindFirst(ClaimTypes.Name)?.Value;
+            var sender = await _dbContext.Users.FirstOrDefaultAsync(x => x.email == emailUser);
+            var receiverUser = await _dbContext.Users.FirstOrDefaultAsync(x => x.email == receiver);
+            if (sender == null || receiverUser == null) throw new Exception("not found sender or receiver");
+            notication.sender = sender;
+            notication.receiver = receiverUser;
 
-            book.category = categoryDb;
-            await _dbContext.Books.AddAsync(book);
-
+            await _dbContext.Notications.AddAsync(notication);
             await _dbContext.SaveChangesAsync();
 
             return RedirectToAction("Index");
@@ -52,45 +62,8 @@ public class NoticationController : Controller
             return Ok(ex.Message);
         }
     }
-    [HttpGet]
-    public async Task<IActionResult> Edit(string id)
-    {
-        var categories = await _dbContext.Categories.ToListAsync();
-        ViewBag.categories = categories;
-        try
-        {
-            var book = await _dbContext.Books.FirstOrDefaultAsync(x => x.id == id);
-            return View(book);
-        }
-        catch (System.Exception ex)
-        {
-            return Ok(ex.Message);
-        }
-    }
 
-    [HttpPost]
-    public async Task<IActionResult> Edit([Bind] Book book, string category)
-    {
-        var categories = await _dbContext.Categories.ToListAsync();
-        ViewBag.categories = categories;
-        try
-        {
 
-            var bookDb = await _dbContext.Books.FirstOrDefaultAsync(x => x.id == book.id);
-            if (bookDb != null)
-            {
-                var categoryDb = await _dbContext.Categories.FirstOrDefaultAsync(x => x.id == category);
-                if (categoryDb != null) bookDb.category = categoryDb;
-                _dbContext.Entry(bookDb).CurrentValues.SetValues(book);
-                await _dbContext.SaveChangesAsync();
-            }
-            return View(book);
-        }
-        catch (System.Exception ex)
-        {
-            return Ok(ex.Message);
-        }
-    }
 
 
     [HttpPost]
@@ -98,10 +71,10 @@ public class NoticationController : Controller
     {
         try
         {
-            var book = await _dbContext.Books.FirstOrDefaultAsync(x => x.id == id);
-            if (book != null)
+            var noti = await _dbContext.Notications.FirstOrDefaultAsync(x => x.id == id);
+            if (noti != null)
             {
-                _dbContext.Books.Remove(book);
+                _dbContext.Notications.Remove(noti);
                 await _dbContext.SaveChangesAsync();
             }
             return RedirectToAction("Index");

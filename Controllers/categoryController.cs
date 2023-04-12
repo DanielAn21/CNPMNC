@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using LibManager.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibManager.Controllers;
 
+[Authorize]
 public class CategoryController : Controller
 {
     private readonly ILogger<CategoryController> _logger;

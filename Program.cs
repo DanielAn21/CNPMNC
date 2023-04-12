@@ -8,6 +8,14 @@ builder.Services.AddRazorPages()
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<LibDbContext>(options =>
   options.UseSqlServer(builder.Configuration.GetConnectionString("sql_server_local") ?? ""));
+builder.Services.AddAuthentication("libmanager")
+    .AddCookie("libmanager", options =>
+    {
+        options.AccessDeniedPath = new PathString("/auth/Forbidden");
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(1200);
+        options.LoginPath = new PathString("/auth/Login");
+        options.SlidingExpiration = true;
+    });
 
 var app = builder.Build();
 
@@ -23,7 +31,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

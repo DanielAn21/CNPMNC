@@ -5,7 +5,7 @@
 <div class="col-12 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Add new book</h4>
+      <h4 class="card-title">Cập Nhật</h4>
       <p class="card-description">please enter all form</p>
       <form class="forms-sample" method="post" asp-action="edit">
          <div class="form-group">
@@ -24,28 +24,28 @@
           />
         </div>
         <div class="form-group">
-          <label asp-for="@Model.author"></label>
+          <label asp-for="@Model.author">Tác Giả</label>
           <input
             class="form-control"
             asp-for="@Model.author"
           />
         </div>
         <div class="form-group">
-          <label asp-for="@Model.publicYear"></label>
+          <label asp-for="@Model.publicYear">Năm Xuất Bản</label>
           <input
             class="form-control"
             asp-for="@Model.publicYear"
           />
         </div>
          <div class="form-group">
-          <label asp-for="@Model.publisher"></label>
+          <label asp-for="@Model.publisher">Nhà Xuất Bản</label>
           <input
             class="form-control"
             asp-for="@Model.publisher"
           />
         </div>
           <div class="form-group">
-          <label asp-for="@Model.quantity"></label>
+          <label asp-for="@Model.quantity">Số Lượng</label>
           <input
             class="form-control"
             asp-for="@Model.quantity"
@@ -53,7 +53,7 @@
         </div>
        
         <div class="form-group">
-          <label for="exampleSelectGender">category</label>
+          <label for="exampleSelectGender">Thể Loại</label>
           <select class="form-control" name="category" id="exampleSelectGender">
          @if(categories != null){
              @foreach (var item in categories)
