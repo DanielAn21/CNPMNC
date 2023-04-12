@@ -4,6 +4,7 @@ using LibManager.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibManager.Migrations
 {
     [DbContext(typeof(LibDbContext))]
-    partial class LibDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230411161746___remove_posision_user")]
+    partial class __remove_posision_user
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,36 +104,6 @@ namespace LibManager.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("LibManager.Models.Notication", b =>
-                {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("dateCreate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("receiverid")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("senderid")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("text")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("typeMessage")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("receiverid");
-
-                    b.HasIndex("senderid");
-
-                    b.ToTable("Notications");
-                });
-
             modelBuilder.Entity("LibManager.Models.Report", b =>
                 {
                     b.Property<string>("id")
@@ -217,21 +189,6 @@ namespace LibManager.Migrations
                     b.Navigation("book");
 
                     b.Navigation("user");
-                });
-
-            modelBuilder.Entity("LibManager.Models.Notication", b =>
-                {
-                    b.HasOne("LibManager.Models.User", "receiver")
-                        .WithMany()
-                        .HasForeignKey("receiverid");
-
-                    b.HasOne("LibManager.Models.User", "sender")
-                        .WithMany()
-                        .HasForeignKey("senderid");
-
-                    b.Navigation("receiver");
-
-                    b.Navigation("sender");
                 });
 
             modelBuilder.Entity("LibManager.Models.Category", b =>

@@ -18645,6 +18645,11 @@
   "RootNamespace": "LibManager",
   "Documents": [
     {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Book copy/Edit.cshtml",
+      "TargetPath": "Views\\Book copy\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/toanle/code Thue/LibManager/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -18670,6 +18675,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/User/create.cshtml",
+      "TargetPath": "Views\\User\\create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/toanle/code Thue/LibManager/Views/Shared/_nav.cshtml",
       "TargetPath": "Views\\Shared\\_nav.cshtml",
       "FileKind": "mvc"
@@ -18680,8 +18690,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Book copy/Index.cshtml",
+      "TargetPath": "Views\\Book copy\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/toanle/code Thue/LibManager/Views/Category/Index.cshtml",
       "TargetPath": "Views\\Category\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/User/Edit.cshtml",
+      "TargetPath": "Views\\User\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18695,6 +18715,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/Book copy/create.cshtml",
+      "TargetPath": "Views\\Book copy\\create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/toanle/code Thue/LibManager/Views/Category/edit.cshtml",
       "TargetPath": "Views\\Category\\edit.cshtml",
       "FileKind": "mvc"
@@ -18702,6 +18727,11 @@
     {
       "FilePath": "/Users/toanle/code Thue/LibManager/Views/Category/create.cshtml",
       "TargetPath": "Views\\Category\\create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/toanle/code Thue/LibManager/Views/User/Index.cshtml",
+      "TargetPath": "Views\\User\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

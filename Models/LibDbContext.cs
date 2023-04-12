@@ -12,6 +12,9 @@ public class LibDbContext : DbContext
     public DbSet<Borrowing> Borrowings { set; get; } = default!;
     public DbSet<Report> Reports { set; get; } = default!;
     public DbSet<Category> Categories { set; get; } = default!;
+    public DbSet<Notication> Notications { set; get; } = default!;
+
+
 
 
 }

@@ -1,0 +1,73 @@
+﻿@model Borrowing;
+@{
+  var users = ViewBag.users as List<User>;
+  var books = ViewBag.books as List<Book>;
+
+}
+
+<div class="col-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Add new book</h4>
+      <p class="card-description">please enter all form</p>
+      <form class="forms-sample" method="post" asp-action="create">
+         <div class="form-group">
+              <label for="exampleSelectGender">Book</label>
+              <select class="form-control" name="bookId" id="exampleSelectGender">
+            @if(books != null){
+                @foreach (var item in books)
+                {
+                    <option value="@item.id">@item.title</option>
+                }
+            }
+              </select>
+         </div>
+         <div class="form-group">
+              <label for="exampleSelectGender">User</label>
+              <select class="form-control" name="userId" id="exampleSelectGender">
+            @if(users != null){
+                @foreach (var item in users)
+                {
+                    <option value="@item.id">@item.email</option>
+                }
+            }
+              </select>
+         </div>
+        <div class="form-group">
+          <label asp-for="@Model.brrowingDate"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.brrowingDate"
+          />
+        </div>
+         <div class="form-group">
+          <label asp-for="@Model.dueTime"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.dueTime"
+          />
+        </div>
+        <div class="form-group">
+          <label asp-for="@Model.returnDate"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.returnDate"
+          />
+        </div>
+       
+        <div class="form-group">
+          <label asp-for="@Model.fineAmount"></label>
+          <input
+            class="form-control"
+            asp-for="@Model.fineAmount"
+            value="0"
+          />
+        </div>
+       
+       
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <button class="btn btn-light">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

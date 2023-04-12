@@ -1,0 +1,52 @@
+﻿@model IEnumerable<User>;
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">User list</h4>
+      <p class="card-description">Add class <code>.table-striped</code></p>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>email</th>
+              <th>sex</th>
+              <th>phone</th>
+              <th>role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+              @foreach (var item in Model)
+              {
+                <tr>
+                  <td class="py-1">
+                   @item.email
+                  </td>
+                  <td>
+                    @if(item.sex == 0){
+                      <label class="badge badge-info">Male</label>
+                    }else {
+                      <label class="badge badge-success">female</label>
+
+                    }
+                  </td>
+                  <td>
+                    @item.phone
+                  </td>
+                  <td>@item.role</td>
+                   <td>
+                      <form method="post" asp-action="delete" asp-route-id="@item.id">
+                          <a asp-action="edit" asp-route-id="@item.id" type="button"  class="btn btn-success btn-sm">edit</a>
+                          <button type="submit"  class="btn btn-danger btn-sm">delete</button>
+                      </form>
+                  </td>
+                </tr>
+              }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

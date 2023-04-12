@@ -17,7 +17,6 @@ public class User
     [StringLength(maximumLength: 50, MinimumLength = 6, ErrorMessage = "password has at least 6 characters")]
     public string hashPassword { set; get; } = default!;
     public string email { set; get; } = default!;
-    public string position { set; get; } = default!;
     public Role role { set; get; } = Role.reader;
 
 
