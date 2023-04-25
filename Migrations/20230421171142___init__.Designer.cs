@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibManager.Migrations
 {
     [DbContext(typeof(LibDbContext))]
-    [Migration("20230411080104___category_1")]
-    partial class __category_1
+    [Migration("20230421171142___init__")]
+    partial class __init__
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,7 @@ namespace LibManager.Migrations
                     b.Property<string>("categoryid")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("genre")
+                    b.Property<string>("image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -49,6 +49,10 @@ namespace LibManager.Migrations
 
                     b.Property<int>("quantity")
                         .HasColumnType("int");
+
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("title")
                         .IsRequired()
@@ -108,6 +112,36 @@ namespace LibManager.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("LibManager.Models.Notication", b =>
+                {
+                    b.Property<string>("id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("dateCreate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("receiverid")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("senderid")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("typeMessage")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("receiverid");
+
+                    b.HasIndex("senderid");
+
+                    b.ToTable("Notications");
+                });
+
             modelBuilder.Entity("LibManager.Models.Report", b =>
                 {
                     b.Property<string>("id")
@@ -158,10 +192,6 @@ namespace LibManager.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("position")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("role")
                         .HasColumnType("int");
 
@@ -185,7 +215,7 @@ namespace LibManager.Migrations
             modelBuilder.Entity("LibManager.Models.Borrowing", b =>
                 {
                     b.HasOne("LibManager.Models.Book", "book")
-                        .WithMany()
+                        .WithMany("borrowings")
                         .HasForeignKey("bookid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -197,6 +227,26 @@ namespace LibManager.Migrations
                     b.Navigation("book");
 
                     b.Navigation("user");
+                });
+
+            modelBuilder.Entity("LibManager.Models.Notication", b =>
+                {
+                    b.HasOne("LibManager.Models.User", "receiver")
+                        .WithMany()
+                        .HasForeignKey("receiverid");
+
+                    b.HasOne("LibManager.Models.User", "sender")
+                        .WithMany()
+                        .HasForeignKey("senderid");
+
+                    b.Navigation("receiver");
+
+                    b.Navigation("sender");
+                });
+
+            modelBuilder.Entity("LibManager.Models.Book", b =>
+                {
+                    b.Navigation("borrowings");
                 });
 
             modelBuilder.Entity("LibManager.Models.Category", b =>

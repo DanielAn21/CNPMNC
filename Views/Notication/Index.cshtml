@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Notication>;
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Danh sách thông báo</h4>
+      
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Người gửi</th>
+              <th>Người nhận</th>
+              <th>Thời gian gửi</th>
+              <th>Kiểu</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+              @foreach (var item in Model)
+              {
+                <tr>
+                  <td class="py-1">
+                   @item.sender.email
+                  </td>
+                  <td>@item.receiver.email</td>
+                  <td>
+                    @item.dateCreate
+                  </td>
+                  <td>
+                    @if(item.typeMessage == 0){
+                      <label class="badge badge-success">Tin nhắn</label>
+                    }else {
+                      <label class="badge badge-danger">Thông báo</label>
+
+                    }
+                  </td>
+                   <td>
+                      <form method="post" asp-action="delete" asp-route-id="@item.id">
+                          <a asp-action="Details" asp-route-id="@item.id" type="button"  class="btn btn-success btn-sm">Details</a>
+
+                          <button type="submit"  class="btn btn-danger btn-sm">delete</button>
+                      </form>
+                  </td>
+                </tr>
+              }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

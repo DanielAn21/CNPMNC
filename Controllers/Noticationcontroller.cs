@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LibManager.Controllers;
 
-[Authorize]
+[Authorize(Roles="admin")]
 public class NoticationController : Controller
 {
     private readonly ILogger<NoticationController> _logger;

@@ -9,133 +9,137 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LibManager
 build_property.RootNamespace = LibManager
-build_property.ProjectDir = /Users/toanle/code Thue/LibManager/
+build_property.ProjectDir = C:\Users\Gia Bao\OneDrive\Desktop\libmanager\LibManager\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = /Users/toanle/code Thue/LibManager
+build_property.MSBuildProjectDirectory = C:\Users\Gia Bao\OneDrive\Desktop\libmanager\LibManager
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/toanle/code Thue/LibManager/Views/Auth/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9FZGl0LmNzaHRtbA==
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Auth/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Auth/Forbidden.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9Gb3JiaWRkZW4uY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Auth/Forbidden.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3JiaWRkZW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Auth/login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9sb2dpbi5jc2h0bWw=
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Auth/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxsb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Book/create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9vay9jcmVhdGUuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Book/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xjcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Book/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9vay9FZGl0LmNzaHRtbA==
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Book/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Book/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9vay9JbmRleC5jc2h0bWw=
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Book/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Borrowing/create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9ycm93aW5nL2NyZWF0ZS5jc2h0bWw=
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Borrowing/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93aW5nXGNyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Borrowing/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9ycm93aW5nL0VkaXQuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Borrowing/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93aW5nXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Borrowing/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9ycm93aW5nL0luZGV4LmNzaHRtbA==
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Borrowing/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93aW5nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Category/create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvY3JlYXRlLmNzaHRtbA==
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Category/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcY3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Category/edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvZWRpdC5jc2h0bWw=
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Category/edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcZWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Category/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvSW5kZXguY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Home/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9DcmVhdGUuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Notication/create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTm90aWNhdGlvbi9jcmVhdGUuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Notication/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWNhdGlvblxjcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Notication/details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTm90aWNhdGlvbi9kZXRhaWxzLmNzaHRtbA==
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Notication/details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWNhdGlvblxkZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Notication/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTm90aWNhdGlvbi9JbmRleC5jc2h0bWw=
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Notication/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWNhdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/RegisterBook/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJCb29rXGNyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Shared/_nav.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19uYXYuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Shared/_rightSidebar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19yaWdodFNpZGViYXIuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Shared/_nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9uYXYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Shared/_sidebar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19zaWRlYmFyLmNzaHRtbA==
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Shared/_rightSidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9yaWdodFNpZGViYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Shared/_themeSetting.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL190aGVtZVNldHRpbmcuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Shared/_sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zaWRlYmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Shared/_themeSetting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF90aGVtZVNldHRpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Tracking/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhY2tpbmcvaW5kZXguY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Tracking/Tracking.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhY2tpbmcvVHJhY2tpbmcuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Tracking/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhY2tpbmdcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/User/create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9jcmVhdGUuY3NodG1s
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Tracking/Tracking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhY2tpbmdcVHJhY2tpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/User/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9FZGl0LmNzaHRtbA==
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/User/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxjcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/User/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9JbmRleC5jc2h0bWw=
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/toanle/code Thue/LibManager/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-gwl489sf0b
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gia Bao/OneDrive/Desktop/libmanager/LibManager/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-tyw139iwho

@@ -1,6 +1,6 @@
 ﻿@model Book;
 @{
-    var categories = ViewBag.categories as List<Category>;
+  var categories = ViewBag.categories as List<Category>;
 }
 <div class="col-12 grid-margin stretch-card">
   <div class="card">
@@ -9,7 +9,7 @@
       <p class="card-description">Hãy Nhập tên sách</p>
       <form class="forms-sample" method="post" asp-action="create">
         <div class="form-group">
-          <label asp-for="@Model.title"></label>
+          <label asp-for="@Model.title">Tiêu đề</label>
           <input
             class="form-control"
             asp-for="@Model.title"
@@ -29,6 +29,13 @@
             asp-for="@Model.publicYear"
           />
         </div>
+          <div class="form-group">
+          <label asp-for="@Model.image">Link Ảnh</label>
+          <input
+            class="form-control"
+            asp-for="@Model.image"
+          />
+        </div>
          <div class="form-group">
           <label asp-for="@Model.publisher">Nhà Xuất Bản</label>
           <input
@@ -43,16 +50,24 @@
             asp-for="@Model.quantity"
           />
         </div>
-       
+
         <div class="form-group">
           <label for="exampleSelectGender">Thể Loại</label>
           <select class="form-control" name="category" id="exampleSelectGender">
-         @if(categories != null){
-             @foreach (var item in categories)
+         @if (categories != null)
             {
-                <option value="@item.id">@item.name</option>
+              @foreach (var item in categories)
+              {
+                                        <option value="@item.id">@item.name</option>
+              }
             }
-         }
+          </select>
+           <div class="form-group">
+          <label for="exampleSelectGender">Tình Trạng: </label>
+          <select class="form-control" name="status" id="exampleSelectGender">
+                <option value="Bình Thường">Bình Thường</option>
+                <option value="Mất">Mất</option>
+                <option value="Hư">Hư</option>
           </select>
         </div>
         <button type="submit" class="btn btn-primary mr-2">Submit</button>

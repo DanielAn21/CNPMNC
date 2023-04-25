@@ -19,9 +19,10 @@ public class UserController : Controller
         _dbContext = dbContext;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string search = "")
     {
-        var accounts = await _dbContext.Users.ToListAsync();
+        var accounts = await _dbContext.Users.Where(x => x.email.ToLower().Contains(search.ToLower()))
+        .ToListAsync();
         return View(accounts);
 
     }

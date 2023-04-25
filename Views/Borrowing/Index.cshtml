@@ -4,39 +4,42 @@
 <div class="col-lg-12 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Borrowing list</h4>
-      <p class="card-description">Add class <code>.table-striped</code></p>
+      <h4 class="card-title">Danh sách Mượn Sách</h4>
+     
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
-            <tr>
-              <th>Ten Sach</th>
+              <th>Mã Phiếu</th>
+              <th>Tên Sách</th>
               <th>Email</th>
-              <th>Ngay Muon</th>
-              <th>Ngay Tra</th>
-              <th>Actions</th>
+              <th>Ngày Mượn</th>
+              <th>Ngày Trả</th>
+              <th>Thao tác</th>
             </tr>
           </thead>
           <tbody>
-              @foreach (var item in Model)
-              {
-                <tr>
-                  <td class="py-1">
-                   @item.book.title
-                  </td>
-                  <td>@item.user.email</td>
-                  <td>
-                    @item.brrowingDate
-                  </td>
-                  <td>@item.returnDate</td>
-                   <td>
-                      <form method="post" asp-action="delete" asp-route-id="@item.id">
-                          <a asp-action="edit" asp-route-id="@item.id" type="button"  class="btn btn-success btn-sm">edit</a>
-                          <button type="submit"  class="btn btn-danger btn-sm">delete</button>
-                      </form>
-                  </td>
-                </tr>
-              }
+            @foreach (var item in Model)
+            {
+                      <tr>
+                        <td class="py-1">
+                  @item.id
+                        </td>
+                        <td class="py-1">
+                  @item.book.title
+                        </td>
+                        <td>@item.user.email</td>
+                        <td>
+                  @item.brrowingDate
+                        </td>
+                        <td>@item.returnDate</td>
+                         <td>
+                            <form method="post" asp-action="delete" asp-route-id="@item.id">
+                                <a asp-action="edit" asp-route-id="@item.id" type="button"  class="btn btn-success btn-sm">edit</a>
+                                <button type="submit"  class="btn btn-danger btn-sm">delete</button>
+                            </form>
+                        </td>
+                      </tr>
+            }
           </tbody>
         </table>
       </div>

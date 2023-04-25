@@ -3,13 +3,13 @@
           <li class="nav-item">
             <a class="nav-link" href="/home">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">Thống Kê</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Sách </span>
+              <span class="menu-title">Sách </span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
@@ -54,7 +54,7 @@
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/borrowing">Danh Sách</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/borrowing/create">Tạo Mới</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/borrowing/create">Tạo Mới</a></li>
 
               </ul>
             </div>
@@ -83,8 +83,10 @@
                 <li class="nav-item"> <a class="nav-link" href="/user"> Danh Sách </a></li>
                 <li class="nav-item"> <a class="nav-link" href="/user/create"> Tạo Mới </a></li>
               </ul>
-            </div>
+            </div> 
+            
           </li>
+         
           @* <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
               <i class="icon-ban menu-icon"></i>
@@ -104,5 +106,17 @@
               <span class="menu-title">Tra Cứu</span>
             </a>
           </li>
+         <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#bookRegis" aria-expanded="false" aria-controls="bookRegis">
+              <i class="mdi mdi-folder-plus"></i>
+              <span class="menu-title"> Đăng Kí Sách </span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="bookRegis">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/registerBook/create">Đăng Kí Ngay</a></li>
+              </ul>
+            </div>
+          </li> 
         </ul>
       </nav>

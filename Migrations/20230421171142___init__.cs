@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LibManager.Migrations
 {
-    public partial class __add_category : Migration
+    public partial class __init__ : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,7 +48,6 @@ namespace LibManager.Migrations
                     phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     hashPassword = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    position = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     role = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -65,8 +64,9 @@ namespace LibManager.Migrations
                     author = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     publicYear = table.Column<int>(type: "int", nullable: false),
                     publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    genre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     quantity = table.Column<int>(type: "int", nullable: false),
+                    image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     categoryid = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
@@ -76,6 +76,32 @@ namespace LibManager.Migrations
                         name: "FK_Books_Categories_categoryid",
                         column: x => x.categoryid,
                         principalTable: "Categories",
+                        principalColumn: "id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Notications",
+                columns: table => new
+                {
+                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    text = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    dateCreate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    senderid = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    receiverid = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    typeMessage = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Notications", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Notications_Users_receiverid",
+                        column: x => x.receiverid,
+                        principalTable: "Users",
+                        principalColumn: "id");
+                    table.ForeignKey(
+                        name: "FK_Notications_Users_senderid",
+                        column: x => x.senderid,
+                        principalTable: "Users",
                         principalColumn: "id");
                 });
 
@@ -121,12 +147,25 @@ namespace LibManager.Migrations
                 name: "IX_Borrowings_userid",
                 table: "Borrowings",
                 column: "userid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Notications_receiverid",
+                table: "Notications",
+                column: "receiverid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Notications_senderid",
+                table: "Notications",
+                column: "senderid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Borrowings");
+
+            migrationBuilder.DropTable(
+                name: "Notications");
 
             migrationBuilder.DropTable(
                 name: "Reports");

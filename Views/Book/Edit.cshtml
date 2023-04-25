@@ -6,7 +6,7 @@
   <div class="card">
     <div class="card-body">
       <h4 class="card-title">Cập Nhật</h4>
-      <p class="card-description">please enter all form</p>
+      
       <form class="forms-sample" method="post" asp-action="edit">
          <div class="form-group">
           <label asp-for="@Model.id"></label>
@@ -28,6 +28,13 @@
           <input
             class="form-control"
             asp-for="@Model.author"
+          />
+        </div>
+          <div class="form-group">
+            <label asp-for="@Model.image">Link Ảnh</label>
+          <input
+            class="form-control"
+            asp-for="@Model.image"
           />
         </div>
         <div class="form-group">
@@ -61,6 +68,14 @@
                 <option value="@item.id">@item.name</option>
             }
          }
+          </select>
+        </div>
+          <div class="form-group">
+          <label for="exampleSelectGender">Tinh Trạng: </label>
+          <select class="form-control" name="status" id="exampleSelectGender">
+                <option value="Bình Thường">Bình Thường</option>
+                <option value="Mất">Mất</option>
+                <option value="Hư">Hư</option>
           </select>
         </div>
         <button type="submit" class="btn btn-primary mr-2">Submit</button>

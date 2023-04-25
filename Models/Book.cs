@@ -11,7 +11,9 @@ public class Book
     public int publicYear { get; set; } = default!;
     public string publisher { get; set; } = default!;
     public int quantity { set; get; } = default!;
+    public string image { set; get; } = default!;
+    public string status { set; get; } = default!;
     public Category category { set; get; } = default!;
-
+    public List<Borrowing> borrowings { set; get; } = default!;
 
 }

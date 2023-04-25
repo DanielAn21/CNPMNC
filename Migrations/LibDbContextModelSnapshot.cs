@@ -34,6 +34,10 @@ namespace LibManager.Migrations
                     b.Property<string>("categoryid")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("publicYear")
                         .HasColumnType("int");
 
@@ -43,6 +47,10 @@ namespace LibManager.Migrations
 
                     b.Property<int>("quantity")
                         .HasColumnType("int");
+
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("title")
                         .IsRequired()
@@ -205,7 +213,7 @@ namespace LibManager.Migrations
             modelBuilder.Entity("LibManager.Models.Borrowing", b =>
                 {
                     b.HasOne("LibManager.Models.Book", "book")
-                        .WithMany()
+                        .WithMany("borrowings")
                         .HasForeignKey("bookid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -232,6 +240,11 @@ namespace LibManager.Migrations
                     b.Navigation("receiver");
 
                     b.Navigation("sender");
+                });
+
+            modelBuilder.Entity("LibManager.Models.Book", b =>
+                {
+                    b.Navigation("borrowings");
                 });
 
             modelBuilder.Entity("LibManager.Models.Category", b =>

@@ -5,8 +5,8 @@
 <div class="col-12 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Update Category</h4>
-      <p class="card-description">please enter all form</p>
+      <h4 class="card-title">Cập nhật thể loại</h4>
+      
       <form class="forms-sample" method="post" asp-action="edit">
         <div class="form-group">
           <label asp-for="@Model.id"></label>
@@ -17,7 +17,7 @@
           />
         </div>
         <div class="form-group">
-          <label asp-for="@Model.name"></label>
+          <label asp-for="@Model.name">Tên thể loại</label>
           <input
             class="form-control"
             asp-for="@Model.name"

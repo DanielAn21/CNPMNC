@@ -1,7 +1,10 @@
+using System.Text.Json.Serialization;
 using LibManager.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddRazorPages()
     .AddRazorRuntimeCompilation();
 // Add services to the container.

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LibManager.Controllers;
 
-[Authorize]
+[Authorize(Roles = "admin")]
 public class BorrowingController : Controller
 {
     private readonly ILogger<BorrowingController> _logger;
@@ -25,9 +25,13 @@ public class BorrowingController : Controller
 
     }
 
-    public IActionResult Create()
+    [Authorize(Roles = "admin")]
+    public async Task<IActionResult> Create()
     {
-        ShowAllUsersAndBooks();
+        var books = await _dbContext.Books.ToListAsync();
+        var users = await _dbContext.Users.ToListAsync();
+        ViewBag.books = books;
+        ViewBag.users = users;
         return View();
     }
 
@@ -40,6 +44,7 @@ public class BorrowingController : Controller
 
     }
 
+    [Authorize(Roles = "admin")]
     [HttpPost]
     public async Task<IActionResult> Create([Bind] Borrowing borrowing, string userId, string bookId)
     {

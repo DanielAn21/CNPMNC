@@ -18,16 +18,17 @@ public class BookController : Controller
         _dbContext = dbContext;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string search = "")
     {
         var categories = await _dbContext.Categories.ToListAsync();
         ViewBag.categories = categories;
 
-        var books = await _dbContext.Books.Include(x => x.category).ToListAsync();
+        var books = await _dbContext.Books.Include(x => x.category).
+        Where(x => x.title.ToLower().Contains(search.ToLower())).ToListAsync();
         return View(books);
 
     }
-
+    [Authorize(Roles = "admin")]
     public async Task<IActionResult> Create()
     {
         var categories = await _dbContext.Categories.ToListAsync();
@@ -58,6 +59,8 @@ public class BookController : Controller
             return Ok(ex.Message);
         }
     }
+
+    [Authorize(Roles = "admin")]
     [HttpGet]
     public async Task<IActionResult> Edit(string id)
     {
@@ -100,6 +103,8 @@ public class BookController : Controller
 
 
     [HttpPost]
+    [Authorize(Roles = "admin")]
+
     public async Task<IActionResult> delete(string id)
     {
         try

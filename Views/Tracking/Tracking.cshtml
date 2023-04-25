@@ -1,0 +1,43 @@
+﻿@model Borrowing;
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Thông tin phiếu mượn</h4>
+      
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Tên Sách</th>
+              <th> Email</th>
+              <th>Số điện thoại</th>
+
+              <th>Ngày Mượn</th>
+              <th>Ngày Trả</th>
+              <th>Số Tiền Phải Đóng</th>
+            </tr>
+          </thead>
+          <tbody>
+             
+                <tr>
+                  <td class="py-1">
+                   @Model.book.title
+                  </td>
+                  <td>@Model.user.email</td>
+                  <td>@Model.user.phone</td>
+                  <td>
+                    @Model.brrowingDate
+                  </td>
+                  <td>@Model.returnDate</td>
+                  <td>@Model.fineAmount</td>
+
+                   
+                </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
